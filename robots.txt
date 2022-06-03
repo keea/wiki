@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://keea.github.io/wiki/sitemap/sitemap-index.xml
+Host: https://keea.github.io
