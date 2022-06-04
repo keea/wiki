@@ -1,5 +1,6 @@
 const path = require("path");
 const pathPrefix = "/";
+const contentFolder = "content";
 const siteMetadata = {
   title: "Keea Wiki",
   shortName: "Wiki",
@@ -20,7 +21,7 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "content",
-        path: `${__dirname}/..`,
+        path: `${__dirname}/../${contentFolder}`,
         ignore: [`**/\.*/**/*`],
       },
     },
