@@ -12,6 +12,7 @@
     "test": "echo test"
   },
   "dependencies": {
+    "@giscus/react": "^1.1.2",
     "gatsby": "4.6.0",
     "gatsby-plugin-google-gtag": "^4.11.0",
     "gatsby-plugin-manifest": "^4.11.1",
