@@ -10,5 +10,5 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - run: echo ${{ github.event.head_commit.message }}
-    - run: echo ${{ contains(github.event.head_commit.message, 'Update Post') }}
+    - run: echo ${{ github.event.commits[0].message }}
+    - run: echo ${{ contains(github.event.commits[0].message, 'Update Post') }}
