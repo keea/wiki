@@ -10,9 +10,9 @@ jobs:
   request:
     runs-on: ubuntu-latest
     if: ${{ !contains(github.event.head_commit.message, 'Update Post') }}
-    step:
+    steps:
     - uses: peter-evans/repository-dispatch@v2
-    with:
-      tocken: ${{ secrets.REPO_ACCESS_TOKEN }}
-      repository: ${{ secrets.SEND_REPO }}
-      event-type: tweet
+      with:
+        tocken: ${{ secrets.REPO_ACCESS_TOKEN }}
+        repository: ${{ secrets.SEND_REPO }}
+        event-type: tweet
