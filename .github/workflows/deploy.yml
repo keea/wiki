@@ -44,3 +44,6 @@ jobs:
         with:
           publish_dir: ./.layouts/public
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Test
+        run: echo ${{ github.event.head_commit.message }}
