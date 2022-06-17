@@ -1,6 +1,6 @@
 const path = require("path");
 const pathPrefix = "/";
-const contentFolder = "content";
+const contentFolder = "Post";
 const siteMetadata = {
   title: "Keea Wiki",
   shortName: "Wiki",
