@@ -4,7 +4,7 @@ tags:
 - vscode
 - c++
 date: 2022-06-18, 18:49:39
-update: 2022-06-18, 20:03:05
+update: 2022-06-18, 20:29:06
 title: vscode devcontainer C++
 ---
 ## TL;DR
@@ -146,7 +146,7 @@ sh "${TMP_DIR}/${CMAKE_BINARY_NAME}" --prefix=/opt/cmake --skip-license
 ln -s /opt/cmake/bin/cmake /usr/local/bin/cmake
 ```
 
-## ###  VSCode에서 컨테이너로 원격 연결
+## VSCode에서 컨테이너로 원격 연결
 ![[Pasted image 20220618194716.png]]
 위와 같이 창이 뜨면 `Reopen in Container`를 누른다.
 
