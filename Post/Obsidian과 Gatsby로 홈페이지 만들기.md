@@ -1,9 +1,10 @@
 ---
 tags:
+- 작업일지
 - obsidian
 - gatsby
 date: 2022-06-04, 17:55:14
-update: 2022-06-04, 18:16:27
+update: 2022-06-18, 18:43:28
 title: Obsidian과 Gatsby로 홈페이지 만들기
 ---
 ## TL;DR
