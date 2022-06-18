@@ -1,0 +1,33 @@
+name: Tweet
+on:
+  workflow_run:
+    workflows: ["Deploy Site"]
+    types:
+      - completed
+jobs:
+  tweet:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - name: Install dependencies
+        working-directory: .automatically
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - run: git config --global core.quotepath false
+      - name: Share status
+        working-directory: .automatically
+        env:
+          TWITTER_ACCESS_TOKEN_KEY: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+          TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
+          TWITTER_API_SECRET: ${{ secrets.TWITTER_API_SECRET }}
+          TWITTER_BEARER_TOKEN_KEY: ${{ secrets.TWITTER_BEARER_TOKEN_KEY }}
+          SITE_DOMAIN: ${{ secrets.SITE_DOMAIN }}
+        run: git diff --name-status HEAD~1 | grep ".md$" | grep "^A" | cut -c 3- | xargs -L 1 python3 AutoTweet.py
