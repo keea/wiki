@@ -17,7 +17,7 @@ def GetTweetText(file):
     file_name = file.replace('.md','')
     post_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../"+file)
     post = frontmatter.load(post_path)
-    post_text = "New Post : " + post['title'] +"\n" + site_url + urllib.parse.quote(file_name)
+    post_text = "New Post : " + post['title'] +"\n" + site_url + urllib.parse.quote(file_name.lstrip("Post/"))
     return post_text
 
 
